@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Backand ORM</title>
+    
+
+    <style>
+		body {
+			margin: 30px;
+		}
+        #oauth2 button {
+            margin-top: 20px;
+            margin-left: 20px;
+        }
+        .output{
+            margin-bottom:10px;
+        }
+		.alert-danger{
+			color:red;
+		}
+		.alert-success{
+			color:green;
+		}
+    </style>
+</head>
+<body>
+
+<!--authentication-->
+<div class="row">
+    <div class="col-md-12">
+        <section id="oauth2">
+            <div class="page-header">
+                <h1>
+                    authentication<small>
+                    (<a target="_blank" href="">backand.security.authentication</a>)
+                </small>
+                </h1>
+            </div>
+            <div class="row">
+                <div class="col-md-8">
+                    <div class='well'>
+                        <fieldset>
+                            <legend>
+                                User Credentials:
+                            </legend>
+                            <div>
+                                <label class="col-md-2">
+                                    username:
+                                    <input id="username" value="guest@backand.com" />
+                                </label>
+                            </div>
+                            <div>
+                            <div>
+                            <div>
+                                <label class="col-md-2">
+                                    password:
+                                    <input id="password" value="guest1234" />
+                                </label>
+                            </div>
+                            <div>
+                                <label class="col-md-2">
+                                    appname:
+                                    <input id="appname" value="vanillademo" />
+                                </label>
+                            </div>
+                            <button id="oauth2-button">sign in</button>
+                        </fieldset>
+                            <pre>
+backand.security.signin(username, password, appname, successCallback, errorCallback);</pre>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div id="oauth2-output" class="output">
+
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+</div>
+
+
+
+<!--CRUD-->
+<div class="row">
+    <div class="col-md-12">
+        <section id="crud">
+            <div class="page-header">
+                <h1>
+                    CRUD<small>
+                    (<a target="_blank" href="">backand.model</a>)
+                </small>
+                </h1>
+            </div>
+            <div class="row">
+                <div id="create" class="row">
+                    <div class="col-md-8">
+                        <div class='well'>
+
+                            <button id="create-button"><font size="10">C</font>reate</button>
+                            <div>
+                                    <pre>
+var item = { "name": "good item", "description": "very good item" };
+backand.api.object.create(objectName, item, successCallback, errorCallback);                            </div>
+
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div id="create-output" class="output">
+
+                        </div>
+                    </div>
+                </div>
+                <div id="readMultiFilter" class="row">
+                    <div class="col-md-8">
+                        <div class='well'>
+
+                            <button id="readMultiFilter-button" class="crud-read"><font size="10">R</font>ead</button>
+                            <span>Read list</span>
+
+                            <div>
+                                    <pre>
+backand.api.object.getList(pageNumber, pageSize, filter, sort, search, deep, successCallback, errorCallback);</pre>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div id="readMultiFilter-output" class="output">
+
+                        </div>
+                    </div>
+                </div>
+                <div id="readById" class="row">
+                    <div class="col-md-8">
+                        <div class='well'>
+
+                            <button id="readById-button" class="crud-read"><font size="10">R</font>ead</button>
+                            <span>Read by id</span>
+                            <div>
+                                    <pre>
+backand.api.object.getOne(id, deep, successCallback, errorCallback);</pre>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div id="readById-output" class="output">
+
+                        </div>
+                    </div>
+                </div>
+                <div id="update" class="row">
+                    <div class="col-md-8">
+                        <div class='well'>
+
+                            <button id="update-button"><font size="10">U</font>pdate</button>
+                            <div>
+                                    <pre>
+var item = { "name": "good item", "description": "excellent item" };
+backand.api.object.update(id, employee, successCallback, errorCallback);</pre>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div id="update-output" class="output">
+
+                        </div>
+                    </div>
+                </div>
+                <div id="delete" class="row">
+                    <div class="col-md-8">
+                        <div class='well'>
+
+                            <button id="delete-button"><font size="10">D</font>elete</button>
+                            <div>
+                                    <pre>
+backand.api.object.delete(id, successCallback, errorCallback);</pre>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div id="delete-output" class="output">
+
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+        </section>
+    </div>
+</div>
+
+<script src="backand.js"></script>
+<script src="demo.js"></script>
+</body>
+</html>
