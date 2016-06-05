@@ -9,3 +9,7 @@ It requires [vanilla-js](http://vanilla-js.com/), which means, no installations,
 To view the demo web page, just run demo.html
 
 To use it, copy backand.js to your app and add a reference to it.
+
+```
+<script src="backand.js"></script>
+```
