@@ -152,7 +152,7 @@ var backand = {
 		addSigninEvent: function (appname) {
 			if (backand.security.onsignin !== null) return;
 			// Create the event
-			if (window.navigator.userAgent.indexOf("MSIE ") > 0 || !!navigator.userAgent.match(/Trident.*rv\:11\./)) {
+			if (window.navigator.userAgent.indexOf("MSIE ") > 0 || !!navigator.userAgent.match(/Trident.*rv\:11\./) || window.navigator.userAgent.indexOf("Safari") > 0) {
 				backand.security.onsignin = document.createEvent("CustomEvent");
 				backand.security.onsignin.initCustomEvent('onsignin', false, false, { "appname": appname });
 			}
